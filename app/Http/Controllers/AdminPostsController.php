@@ -39,4 +39,11 @@ class AdminPostsController extends Controller
 
         return redirect()->route('admin.posts.index');
     }
+
+    public function destory($id)
+    {
+        Post::destory($id);
+
+        return redirect()->route('admin.posts.index');
+    }
 }
