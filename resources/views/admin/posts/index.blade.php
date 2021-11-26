@@ -44,7 +44,7 @@
                         <td>文章標題</td>
                         <td style="text-align: center">V</td>
                         <td>
-                            <a href="{{ route('admin.posts.edit', $id) }}">編輯</a>
+                            <a class="btn btn-sm btn-primary" href="{{ route('admin.posts.edit', $id) }}">編輯</a>
                             /
                             <a href="#">刪除</a>
                         </td>
