@@ -35,17 +35,17 @@
             @csrf
             <div class="form-group">
                 <label for="title">標題：</label>
-                <input class="form-control" placeholder="請輸入文章標題" id="title">
+                <input class="form-control" placeholder="請輸入文章標題" id="title" name="title" value="{{old('title')}}">
             </div>
 
             <div class="form-group">
                 <label for="content">內容：</label>
-                <textarea class="form-control" rows="10" id="content"></textarea>
+                <textarea class="form-control" rows="10" id="content" name="content" value="{{old('content')}}"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="is_feature">精選？</label> //id和for的名字相同
-                <select class="form-control" id="is_feature">
+                <select class="form-control" id="is_feature" name="is_feature">
                     <option value="0">否</option>
                     <option value="1">是</option>
                 </select>
