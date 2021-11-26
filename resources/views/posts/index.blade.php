@@ -24,12 +24,13 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             @foreach($posts as $post)
-                <a>
+                <a href="{{route('posts.show',$post->id)}}">
                     <td style="text-align:center">
                         {{$post->id}}
                     </td>
                     <td>
                         {{$post->title}}
+                        {{Str::limit($post->content,150)}} //顯示前150的內容
                     </td>
                     <td style="text-align:center">
                         {{($post->is_feature)? 'v' : 'x' }}
@@ -37,6 +38,7 @@
                         <a href = "{{ route('admin.posts.edit', $post->id) }}">
                            編輯
                         </a>
+                </a>
 
                 </tr>
             @endforeach
