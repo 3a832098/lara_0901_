@@ -23,6 +23,24 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            @foreach($posts as $post)
+                <a>
+                    <td style="text-align:center">
+                        {{$post->id}}
+                    </td>
+                    <td>
+                        {{$post->title}}
+                    </td>
+                    <td style="text-align:center">
+                        {{($post->is_feature)? 'v' : 'x' }}
+                    </td>
+                        <a href = "{{ route('admin.posts.edit', $post->id) }}">
+                           編輯
+                        </a>
+
+                </tr>
+            @endforeach
+
             @foreach(range(1, 5) as $id)
             <div class="post-preview">
                 <a href="{{ route('posts.show', $id) }}">
