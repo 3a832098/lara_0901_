@@ -8,11 +8,12 @@ class PostsController extends Controller
     {
         $posts=Post::orderBy('created_at','DESC')->get();
         $data=['posts'=>$posts];
-        return view('admin.posts.index');
+        return view('posts.index');
     }
 
     public function show($id)
     {
+        $post = POST::find($id);
         $data = ['id' => $id];
 
         return view('posts.show', $data);
