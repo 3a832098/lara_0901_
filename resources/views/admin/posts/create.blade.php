@@ -30,21 +30,22 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <form role="form">
-
+        <form role="form" action ="/admin/posts" method="POST">
+            @method('POST') //傳送方法
+            @csrf
             <div class="form-group">
-                <label>標題：</label>
-                <input class="form-control" placeholder="請輸入文章標題">
+                <label for="title">標題：</label>
+                <input class="form-control" placeholder="請輸入文章標題" id="title">
             </div>
 
             <div class="form-group">
-                <label>內容：</label>
-                <textarea class="form-control" rows="10"></textarea>
+                <label for="content">內容：</label>
+                <textarea class="form-control" rows="10" id="content"></textarea>
             </div>
 
             <div class="form-group">
-                <label>精選？</label>
-                <select class="form-control">
+                <label for="is_feature">精選？</label> //id和for的名字相同
+                <select class="form-control" id="is_feature">
                     <option value="0">否</option>
                     <option value="1">是</option>
                 </select>
